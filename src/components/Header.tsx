@@ -31,7 +31,7 @@ const Header = () => {
               </span>
             </div>
             <span className="font-playfair font-bold text-xl text-foreground">
-              Café Jazz
+              Aconchego
             </span>
           </Link>
 

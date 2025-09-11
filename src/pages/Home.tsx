@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calendar, Coffee, Music } from "lucide-react";
+import Typewriter from "@/components/dinamicFonts";
 
 const Home = () => {
   const menuHighlights = [
@@ -11,20 +12,20 @@ const Home = () => {
       name: "Espresso Especial",
       price: "R$ 8,50",
       description: "Blend exclusivo da casa",
-      image: "/placeholder.svg"
+      image: "/home/one.png",
     },
     {
       name: "Cappuccino Jazz",
       price: "R$ 12,00",
       description: "Com arte latte especial",
-      image: "/placeholder.svg"
+      image: "/home/two.png",
     },
     {
       name: "Cheesecake NY",
       price: "R$ 15,90",
       description: "Sobremesa da casa",
-      image: "/placeholder.svg"
-    }
+      image: "/home/three.png",
+    },
   ];
 
   const events = [
@@ -32,38 +33,39 @@ const Home = () => {
       date: "15 JAN",
       name: "Noite do Jazz",
       description: "Trio de jazz ao vivo",
-      time: "20h"
+      time: "20h",
     },
     {
       date: "22 JAN",
       name: "Degustação de Cafés",
       description: "Especiais do mundo",
-      time: "15h"
+      time: "15h",
     },
     {
       date: "29 JAN",
       name: "Open Mic Night",
       description: "Músicos locais",
-      time: "19h"
-    }
+      time: "19h",
+    },
   ];
 
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-gradient-subtle">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 text-center px-4">
           <h1 className="font-playfair font-bold text-5xl md:text-7xl text-foreground mb-6">
-            Bem-vindo ao Café Jazz
+            Bem-vindo ao <Typewriter />
           </h1>
           <p className="font-inter text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Uma experiência única onde o aroma do café se encontra com a soul do jazz
+            Uma experiência única onde o aroma do café se encontra com a soul do
+            jazz
           </p>
-          <Button 
-            asChild 
+          <Button
+            asChild
             size="lg"
             className="bg-gradient-gold text-primary shadow-gold hover:shadow-elegant transition-all duration-300"
           >
@@ -85,18 +87,38 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {menuHighlights.map((item, index) => (
-              <Card key={index} className="group hover:shadow-elegant transition-all duration-300">
+              <Card
+                key={index}
+                className="group hover:shadow-elegant transition-all duration-300"
+              >
                 <CardHeader>
-                  <div className="w-full h-48 bg-muted rounded-lg mb-4 flex items-center justify-center">
-                    <Coffee className="h-12 w-12 text-muted-foreground" />
+                  <div className="w-full h-48 bg-muted rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                    {item.image ? (
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <Coffee className="h-12 w-12 text-muted-foreground" />
+                    )}
                   </div>
-                  <CardTitle className="font-playfair text-xl">{item.name}</CardTitle>
+
+                  <CardTitle className="font-playfair text-xl">
+                    {item.name}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">{item.description}</p>
+                  <p className="text-muted-foreground mb-4">
+                    {item.description}
+                  </p>
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-accent text-xl">{item.price}</span>
-                    <Button variant="outline" size="sm">Ver mais</Button>
+                    <span className="font-bold text-accent text-xl">
+                      {item.price}
+                    </span>
+                    <Button variant="outline" size="sm">
+                      Ver mais
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -118,7 +140,10 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {events.map((event, index) => (
-              <Card key={index} className="group hover:shadow-elegant transition-all duration-300">
+              <Card
+                key={index}
+                className="group hover:shadow-elegant transition-all duration-300"
+              >
                 <CardHeader>
                   <div className="flex items-center space-x-4 mb-4">
                     <div className="w-16 h-16 bg-gradient-gold rounded-lg flex items-center justify-center">
@@ -126,15 +151,21 @@ const Home = () => {
                     </div>
                     <div>
                       <div className="font-bold text-accent">{event.date}</div>
-                      <div className="text-sm text-muted-foreground">{event.time}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {event.time}
+                      </div>
                     </div>
                   </div>
-                  <CardTitle className="font-playfair text-xl">{event.name}</CardTitle>
+                  <CardTitle className="font-playfair text-xl">
+                    {event.name}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">{event.description}</p>
-                  <Button 
-                    asChild 
+                  <p className="text-muted-foreground mb-4">
+                    {event.description}
+                  </p>
+                  <Button
+                    asChild
                     className="w-full bg-gradient-gold text-primary"
                   >
                     <Link to="/reservas">Saiba mais</Link>
