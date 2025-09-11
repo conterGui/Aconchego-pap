@@ -27,7 +27,7 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-playfair font-bold text-lg">
-                CJ
+                AC
               </span>
             </div>
             <span className="font-playfair font-bold text-xl text-foreground">

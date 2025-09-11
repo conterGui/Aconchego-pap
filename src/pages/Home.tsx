@@ -10,19 +10,19 @@ const Home = () => {
   const menuHighlights = [
     {
       name: "Espresso Especial",
-      price: "R$ 8,50",
+      price: "8,50",
       description: "Blend exclusivo da casa",
       image: "/home/one.png",
     },
     {
       name: "Cappuccino Jazz",
-      price: "R$ 12,00",
+      price: "12,00",
       description: "Com arte latte especial",
       image: "/home/two.png",
     },
     {
       name: "Cheesecake NY",
-      price: "R$ 15,90",
+      price: "15,90",
       description: "Sobremesa da casa",
       image: "/home/three.png",
     },
@@ -114,7 +114,7 @@ const Home = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-accent text-xl">
-                      {item.price}
+                      € {item.price}
                     </span>
                     <Button variant="outline" size="sm">
                       Ver mais
