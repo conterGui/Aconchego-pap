@@ -2,128 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
 
 @layer base {
   :root {
-    --background: 35 25% 96%;
-    --foreground: 25 30% 15%;
+    /* Fundo e contraste do texto */
+    --background: 20 9% 12%;
+    --foreground: 200 15% 90%;
 
-    --card: 35 25% 98%;
-    --card-foreground: 25 30% 15%;
+    /* Cards e popovers */
+    --card: 20 9% 7%;
+    --card-foreground: 200 15% 90%;
+    --popover: 20 9% 7%;
+    --popover-foreground: 200 15% 90%;
 
-    --popover: 35 25% 98%;
-    --popover-foreground: 25 30% 15%;
-
+    /* Cores das categorias */
     --primary: 25 40% 25%;
     --primary-foreground: 45 85% 92%;
-
     --secondary: 35 20% 88%;
     --secondary-foreground: 25 40% 25%;
-
     --muted: 35 15% 90%;
     --muted-foreground: 25 15% 45%;
-
     --accent: 45 65% 75%;
     --accent-foreground: 25 40% 25%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+    --gradient-gold: 45 85% 45%;
 
-    --border: 35 20% 88%;
-    --input: 35 20% 88%;
+
+    --border: 20 9% 7%;
+    --input: 20 9% 7%;
     --ring: 45 65% 55%;
-
     --radius: 0.75rem;
-
-    /* Jazz-themed colors */
-    --jazz-gold: 45 85% 65%;
-    --jazz-bronze: 30 45% 55%;
-    --jazz-cream: 45 50% 92%;
-    --jazz-dark: 25 30% 15%;
-
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(25 40% 25%), hsl(30 45% 35%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 85% 65%), hsl(40 75% 55%));
-    --gradient-subtle: linear-gradient(180deg, hsl(35 25% 98%), hsl(35 20% 94%));
-
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(25 30% 15% / 0.15);
-    --shadow-gold: 0 5px 20px hsl(45 85% 65% / 0.3);
-
-    --sidebar-background: 35 25% 95%;
-    --sidebar-foreground: 25 30% 25%;
-    --sidebar-primary: 25 40% 25%;
-    --sidebar-primary-foreground: 45 85% 92%;
-    --sidebar-accent: 35 20% 88%;
-    --sidebar-accent-foreground: 25 40% 25%;
-    --sidebar-border: 35 20% 85%;
-    --sidebar-ring: 45 65% 55%;
   }
 
-  .dark {
-    --background: 25 30% 8%;
-    --foreground: 45 50% 92%;
-
-    --card: 25 30% 12%;
-    --card-foreground: 45 50% 92%;
-
-    --popover: 25 30% 12%;
-    --popover-foreground: 45 50% 92%;
-
-    --primary: 45 85% 65%;
-    --primary-foreground: 25 30% 8%;
-
-    --secondary: 25 20% 18%;
-    --secondary-foreground: 45 50% 92%;
-
-    --muted: 25 15% 20%;
-    --muted-foreground: 35 15% 65%;
-
-    --accent: 45 75% 55%;
-    --accent-foreground: 25 30% 8%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 25 20% 18%;
-    --input: 25 20% 18%;
-    --ring: 45 75% 55%;
-
-    /* Jazz-themed colors for dark mode */
-    --jazz-gold: 45 85% 65%;
-    --jazz-bronze: 30 45% 55%;
-    --jazz-cream: 45 30% 85%;
-    --jazz-dark: 25 30% 8%;
-
-    /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(45 85% 65%), hsl(40 75% 55%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 85% 65%), hsl(40 75% 55%));
-    --gradient-subtle: linear-gradient(180deg, hsl(25 30% 12%), hsl(25 25% 15%));
-
-    /* Dark mode shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.4);
-    --shadow-gold: 0 5px 20px hsl(45 85% 65% / 0.4);
-
-    --sidebar-background: 25 30% 10%;
-    --sidebar-foreground: 45 50% 85%;
-    --sidebar-primary: 45 85% 65%;
-    --sidebar-primary-foreground: 25 30% 8%;
-    --sidebar-accent: 25 20% 18%;
-    --sidebar-accent-foreground: 45 50% 85%;
-    --sidebar-border: 25 15% 20%;
-    --sidebar-ring: 45 75% 55%;
+  /* Corpo e cards */
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
+
+  .card {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .popover {
+    background-color: hsl(var(--popover));
+    color: hsl(var(--popover-foreground));
+    border-radius: var(--radius);
+  }
+
+  /* Botões */
+  .btn-primary,
+  .bg-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+  .btn-primary:hover,
+  .bg-primary:hover {
+    filter: brightness(1.2);
+  }
+
+  .btn-secondary,
+  .bg-secondary {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+  .btn-secondary:hover,
+  .bg-secondary:hover {
+    filter: brightness(1.2);
+  }
+
+  .btn-muted,
+  .bg-muted {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+  .btn-muted:hover,
+  .bg-muted:hover {
+    filter: brightness(1.2);
+  }
+
+  .btn-accent,
+  .bg-accent {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+  .btn-accent:hover,
+  .bg-accent:hover {
+    filter: brightness(1.2);
+  }
+
+  .btn-destructive,
+  .bg-destructive {
+    background-color: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+  .btn-destructive:hover,
+  .bg-destructive:hover {
+    filter: brightness(1.2);
+  }
+  .bg-gradient-gold {
+  background-color: hsl(var(--gradient-gold));
+  color: hsl(var(--primary-foreground));
+  border-radius: var(--radius);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+.bg-gradient-gold:hover {
+  background-color: hsl(45, 85%, 55%); /* amarelo mais claro no hover */
+  color: hsl(var(--primary-foreground));
+}
 
-  body {
-    @apply bg-background text-foreground;
-  }
 }

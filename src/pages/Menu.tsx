@@ -186,6 +186,7 @@ const Menu = () => {
       description: "Espresso com leite condensado em camadas",
       category: "especiais",
       allergens: ["leite"],
+      isSpecial: true,
       image: "/menu/bombom.png",
     },
   ];
@@ -275,7 +276,7 @@ const Menu = () => {
                       className="group hover:shadow-elegant transition-all duration-300"
                     >
                       <CardHeader>
-                        <div className="w-full h-32 bg-muted rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <div className="w-full h-32 bg-muted rounded-50 mb-4 flex items-center justify-center overflow-hidden">
                           {item.image ? (
                             <img
                               src={item.image}
