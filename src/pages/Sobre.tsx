@@ -273,7 +273,7 @@ const Sobre = () => {
                   <a href="/reservas">Reserve sua Mesa</a>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <a href="/contacto">Entre em Contacto</a>
+                  <a href="/contato">Entre em Contacto</a>
                 </Button>
               </div>
             </div>
