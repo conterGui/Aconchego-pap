@@ -44,7 +44,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-playfair font-bold text-lg">
+              <span className="text-primary-foreground font-playfair font-bold text-lg ">
                 AC
               </span>
             </div>
@@ -73,9 +73,9 @@ const Header = () => {
             {/* Reserve Button */}
             <Button
               asChild
-              className="bg-gradient-gold text-primary shadow-gold hover:shadow-elegant transition-all duration-300"
+              className=" px-2 py-3 rounded-lg bg-gradient-gold text-primary shadow-gold font-medium hover:shadow-elegant transition-all duration-200 hover:scale-105"
             >
-              <Link to="/reservas">Reserve sua Mesa</Link>
+              <Link to="/reservas">Reserve sua mesa</Link>
             </Button>
 
             {/* Cart Button */}

@@ -77,7 +77,7 @@ const Home = () => {
           <Button
             asChild
             size="lg"
-            className="bg-gradient-gold text-primary shadow-gold hover:shadow-elegant transition-all duration-300"
+            className=" px-4 py-3 rounded-lg bg-gradient-gold text-primary shadow-gold font-medium text-lg hover:shadow-elegant transition-all duration-200 hover:scale-105"
           >
             <Link to="/menu">Explore o Menu</Link>
           </Button>

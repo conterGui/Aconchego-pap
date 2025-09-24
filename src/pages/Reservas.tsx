@@ -264,7 +264,7 @@ const Reservas = () => {
                     {/* Submit Button */}
                     <Button
                       type="submit"
-                      className="w-full bg-gradient-gold text-primary shadow-gold hover:shadow-elegant transition-all duration-300"
+                      className="w-full px-4 py-3 rounded-lg bg-gradient-gold text-primary shadow-gold font-medium hover:shadow-elegant transition-all duration-200 hover:scale-105"
                       size="lg"
                     >
                       Enviar Reserva

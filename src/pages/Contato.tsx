@@ -177,7 +177,7 @@ const Contato = () => {
 
                       <Button
                         type="submit"
-                        className="w-full bg-gradient-gold text-primary shadow-gold hover:shadow-elegant transition-all duration-300"
+                        className="w-full px-4 py-3 rounded-lg bg-gradient-gold text-primary shadow-gold hover:shadow-elegant transition-all duration-200 hover:scale-105"
                         size="lg"
                       >
                         <Send className="h-4 w-4 mr-2" />
