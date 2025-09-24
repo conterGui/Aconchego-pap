@@ -13,6 +13,7 @@ import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
 import { CartProvider } from "@/context/cartcontext";
 import Checkout from "./pages/Checkout";
+import EventsPage from "./pages/EventsPage";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,8 @@ const App = () => (
             <Route path="/menu" element={<Menu />} />
             <Route path="/loja" element={<Loja />} />
             <Route path="/eventos" element={<Eventos />} />
+            <Route path="/eventos" element={<Eventos />} />
+            <Route path="/eventos/:id" element={<EventsPage />} />
             <Route path="/reservas" element={<Reservas />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/contato" element={<Contato />} />

@@ -1,7 +1,6 @@
 export default async function sendEmail({ email, items, totalPrice, shippingInfo }) {
   const { nome, morada, cidade } = shippingInfo;
 
-  // Monta os itens em HTML
   const itemsHtml = items
     .map(
       (item) =>
@@ -28,12 +27,12 @@ export default async function sendEmail({ email, items, totalPrice, shippingInfo
       Cidade: ${cidade}
     </p>
 
-    <p>Entraremos em contato caso seja necessário. Obrigado por confiar em nossa loja!</p>
+    <p>O seu pedido já está a ser preparado. Obrigado por confiar em nossa loja!</p>
   `;
 
   await transporter.sendMail({
     from: `"Aconchego" <${process.env.EMAIL_USER}>`,
-    to: email, // envia para o email do cliente
+    to: email,
     subject: "Confirmação da sua compra 🛒",
     html,
   });
