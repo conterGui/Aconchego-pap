@@ -16,9 +16,10 @@ import Checkout from "./pages/Checkout";
 import EventsPage from "./pages/EventsPage";
 import HomeAdmin from "./pages/admin/HomeAdmin";
 import EventsAdmin from "./pages/admin/EventsAdmin";
-import FinancesAdmin from "./pages/admin/FinancesAdmin";
+import MenuAdmin from "./pages/admin/FinancesAdmin";
 import StockAdmin from "./pages/admin/StockAdmin";
 import ReservasAdmin from "./pages/admin/ReservasAdmin";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -30,7 +31,8 @@ const App = () => (
       <CartProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<Login />} />
+            <Route path="/home" element={<Index />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/loja" element={<Loja />} />
             <Route path="/eventos" element={<Eventos />} />
@@ -42,9 +44,10 @@ const App = () => (
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/admin" element={<HomeAdmin />} />
             <Route path="/admin/estoque" element={<StockAdmin />} />
-            <Route path="/admin/financas" element={<FinancesAdmin />} />
+            <Route path="/admin/financas" element={<MenuAdmin />} />
             <Route path="/admin/eventos" element={<EventsAdmin />} />
             <Route path="/admin/reservas" element={<ReservasAdmin />} />
+            <Route path="/admin/menu" element={<MenuAdmin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

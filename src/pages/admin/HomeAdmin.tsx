@@ -41,8 +41,8 @@ const AdminHome = () => {
             </p>
           </div>
           {/* Espaço para imagem/banner */}
-          <div className="w-full md:w-1/3 h-40 bg-muted rounded-2xl flex items-center justify-center">
-            <span className="text-muted-foreground">[Imagem ou Banner]</span>
+          <div className="w-full md:w-1/3 h-40 bg-muted rounded-xl flex items-center justify-center">
+            <img src="bg.jpeg" alt="" className="rounded-xl" />
           </div>
         </div>
 

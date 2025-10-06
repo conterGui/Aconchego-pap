@@ -13,11 +13,11 @@ const HeaderAdmin = () => {
   const cartRef = useRef<HTMLDivElement>(null); // referência ao popover do carrinho
 
   const menuItems = [
-    { name: "Finanças", path: "#" },
-    { name: "Stock", path: "#" },
-    { name: "Menu", path: "#" },
-    { name: "Eventos", path: "#" },
-    { name: "Reservas", path: "#" },
+    { name: "Finanças", path: "/admin/financas" },
+    { name: "Stock", path: "/admin/estoque" },
+    { name: "Menu", path: "/admin/menu" },
+    { name: "Eventos", path: "/admin/eventos" },
+    { name: "Reservas", path: "/admin/reservas" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
