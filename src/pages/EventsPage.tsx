@@ -13,7 +13,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { toast } from "sonner";
-import { events } from "./eventsData";
+import { events } from "./data/eventsData";
 
 const EventPage = () => {
   const { id } = useParams<{ id: string }>();

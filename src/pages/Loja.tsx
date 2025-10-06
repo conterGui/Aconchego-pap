@@ -12,94 +12,14 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Coffee, Filter, Package, ShoppingCart } from "lucide-react";
-import { useCart } from "@/context/cartcontext"; // import do contexto
-
-type Product = {
-  id: number;
-  name: string;
-  price: number;
-  weight: string;
-  roast: string;
-  type: string;
-  origin: string;
-  description: string;
-  inStock: boolean;
-};
+import { useCart } from "@/context/cartcontext";
+import { products, Product } from "./data/lojaData";
 
 const Loja = () => {
   const [selectedRoast, setSelectedRoast] = useState<string>("all");
   const [selectedWeight, setSelectedWeight] = useState<string>("all");
   const [selectedType, setSelectedType] = useState<string>("all");
   const { addItem } = useCart(); // pegar a função para adicionar itens
-
-  const products: Product[] = [
-    {
-      id: 1,
-      name: "Blend Jazz Especial",
-      price: 12.5,
-      weight: "250g",
-      roast: "medio",
-      type: "grao",
-      origin: "Brasil/Colômbia",
-      description: "Blend exclusivo da casa com notas de chocolate e caramelo",
-      inStock: false,
-    },
-    {
-      id: 2,
-      name: "Espresso Forte",
-      price: 18.0,
-      weight: "500g",
-      roast: "escuro",
-      type: "moido",
-      origin: "Itália",
-      description: "Moagem fina para espresso perfeito, sabor intenso",
-      inStock: true,
-    },
-    {
-      id: 3,
-      name: "Bourbon Santos",
-      price: 11.5,
-      weight: "250g",
-      roast: "claro",
-      type: "grao",
-      origin: "São Paulo - Brasil",
-      description: "Café doce e suave, ideal para métodos filtrados",
-      inStock: true,
-    },
-    {
-      id: 4,
-      name: "Colombian Premium",
-      price: 17.0,
-      weight: "500g",
-      roast: "medio",
-      type: "grao",
-      origin: "Huila - Colômbia",
-      description: "Acidez equilibrada com notas frutadas",
-      inStock: true,
-    },
-    {
-      id: 5,
-      name: "Ethiopian Yirgacheffe",
-      price: 13.5,
-      weight: "250g",
-      roast: "claro",
-      type: "moido",
-      origin: "Etiópia",
-      description: "Café floral com notas cítricas, moído para V60",
-      inStock: true,
-    },
-    {
-      id: 6,
-      name: "French Roast",
-      price: 22.0,
-      weight: "1kg",
-      roast: "escuro",
-      type: "grao",
-      origin: "Blend Internacional",
-      description: "Torra francesa tradicional, corpo encorpado",
-      inStock: true,
-    },
-  ];
 
   const filteredProducts = products.filter((product) => {
     const roastMatch =
@@ -218,8 +138,17 @@ const Loja = () => {
                   }`}
                 >
                   <CardHeader>
-                    <div className="w-full h-48 bg-muted rounded-lg mb-4 flex items-center justify-center">
-                      <Coffee className="h-12 w-12 text-muted-foreground" />
+                    <div className="w-full flex items-center justify-center">
+                      <div
+                        className="w-4/5 h-4/5 rounded-lg mb-4 flex items-center justify-center"
+                        style={{ backgroundColor: "#171614" }}
+                      >
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover block"
+                        />
+                      </div>
                     </div>
 
                     <div className="flex flex-wrap gap-2 mb-3">

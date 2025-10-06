@@ -70,7 +70,7 @@ const Home = () => {
           <h1 className="font-playfair font-bold text-4xl md:text-5xl text-foreground mb-4">
             Bem-vindo ao <Typewriter />
           </h1>
-          <p className="font-inter text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <p className="font-inter text-lg md:text-xl text-foreground mb-6 max-w-2xl mx-auto">
             Uma experiência única onde o aroma do café se encontra com a soul do
             jazz
           </p>
