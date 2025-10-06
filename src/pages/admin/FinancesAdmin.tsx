@@ -1,7 +1,7 @@
 import React from "react";
 
-function MenuAdmin() {
+function FinancesAdmin() {
   return <div>Menu</div>;
 }
 
-export default MenuAdmin;
+export default FinancesAdmin;

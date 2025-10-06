@@ -16,10 +16,11 @@ import Checkout from "./pages/Checkout";
 import EventsPage from "./pages/EventsPage";
 import HomeAdmin from "./pages/admin/HomeAdmin";
 import EventsAdmin from "./pages/admin/EventsAdmin";
-import MenuAdmin from "./pages/admin/FinancesAdmin";
+import MenuAdmin from "./pages/admin/AdminMenu";
 import StockAdmin from "./pages/admin/StockAdmin";
 import ReservasAdmin from "./pages/admin/ReservasAdmin";
 import Login from "./pages/Login";
+import FinancesAdmin from "./pages/admin/FinancesAdmin";
 
 const queryClient = new QueryClient();
 
@@ -44,7 +45,7 @@ const App = () => (
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/admin" element={<HomeAdmin />} />
             <Route path="/admin/estoque" element={<StockAdmin />} />
-            <Route path="/admin/financas" element={<MenuAdmin />} />
+            <Route path="/admin/financas" element={<FinancesAdmin />} />
             <Route path="/admin/eventos" element={<EventsAdmin />} />
             <Route path="/admin/reservas" element={<ReservasAdmin />} />
             <Route path="/admin/menu" element={<MenuAdmin />} />

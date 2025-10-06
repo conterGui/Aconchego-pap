@@ -13,7 +13,7 @@ const Header = () => {
   const cartRef = useRef<HTMLDivElement>(null); // referência ao popover do carrinho
 
   const menuItems = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/home" },
     { name: "Menu", path: "/menu" },
     { name: "Loja", path: "/loja" },
     { name: "Eventos", path: "/eventos" },
