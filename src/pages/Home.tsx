@@ -11,7 +11,7 @@ const Home = () => {
     {
       name: "Café Filtrado V60",
       price: "2,80",
-      description: "Método manual com grãos especiais, acidez equilibrada",
+      description: "Método manual com grãos especiais",
       image: "/home/one.png",
     },
     {
@@ -54,33 +54,52 @@ const Home = () => {
       <Header />
 
       {/* Hero Section */}
-      <section
-        className="relative flex items-center justify-center h-[550px] w-full max-w-6xl mx-auto rounded-xl overflow-hidden"
-        style={{
-          backgroundImage: "url('/bg.jpeg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* Overlay escuro mais forte */}
-        <div className="absolute inset-0 bg-black/75"></div>
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Content Side */}
+              <div className="space-y-6">
+                <h1 className="font-playfair font-bold text-5xl md:text-6xl text-foreground">
+                  Bem-vindo ao <Typewriter />
+                </h1>
+                <Button
+                  asChild
+                  size="lg"
+                  className="px-8 py-6 rounded-lg bg-gradient-gold text-primary shadow-gold font-medium text-lg hover:shadow-elegant transition-all duration-200 hover:scale-105"
+                >
+                  <Link to="/menu">Explore o Menu</Link>
+                </Button>
+              </div>
 
-        {/* Conteúdo */}
-        <div className="relative z-10 text-center px-4">
-          <h1 className="font-playfair font-bold text-4xl md:text-5xl text-foreground mb-4">
-            Bem-vindo ao <Typewriter />
-          </h1>
-          <p className="font-inter text-lg md:text-xl text-foreground mb-6 max-w-2xl mx-auto">
-            Uma experiência única onde o aroma do café se encontra com a soul do
-            jazz
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className=" px-4 py-3 rounded-lg bg-gradient-gold text-primary shadow-gold font-medium text-lg hover:shadow-elegant transition-all duration-200 hover:scale-105"
-          >
-            <Link to="/menu">Explore o Menu</Link>
-          </Button>
+              {/* Mockup Images Side */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="w-full h-48 bg-muted rounded-lg overflow-hidden">
+                  <img
+                    src="/mokup/box.png"
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="w-full h-48 bg-muted rounded-lg overflow-hidden">
+                  <img
+                    src="/mokup/coffeeCup.png"
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="w-full h-48 bg-muted rounded-lg overflow-hidden col-span-2">
+                  <img
+                    src="/mokup/placa.png"
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
