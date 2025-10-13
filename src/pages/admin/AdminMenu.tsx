@@ -83,9 +83,11 @@ export default function MenuAdmin() {
 
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 mt-12">
-        <h1 className="text-2xl font-semibold tracking-tight">
-          Gerenciamento de Menu
-        </h1>
+        <div>
+          <h1 className="text-4xl font-bold text-foreground mb-2">
+            Gerenciamento de Menu
+          </h1>
+        </div>
 
         <Dialog open={isAddOpen} onOpenChange={setIsAddOpen}>
           <DialogTrigger asChild>

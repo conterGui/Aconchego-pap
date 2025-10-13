@@ -90,7 +90,11 @@ export default function EventsAdmin() {
       <HeaderAdmin />
       {/* Header */}
       <div className="flex justify-between items-center mb-6 mt-12">
-        <h1 className="text-2xl font-semibold">Gerenciamento de Eventos</h1>
+        <div>
+          <h1 className="text-4xl font-bold text-foreground mb-2">
+            Gerenciamento de Eventos
+          </h1>
+        </div>
 
         <Dialog open={isAddOpen} onOpenChange={setIsAddOpen}>
           <DialogTrigger asChild>

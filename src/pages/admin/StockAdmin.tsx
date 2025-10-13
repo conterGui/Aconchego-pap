@@ -54,9 +54,11 @@ export default function StorkAdmin() {
       <HeaderAdmin />
 
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <h1 className="text-2xl font-semibold tracking-tight">
-          Gerenciamento de Estoque
-        </h1>
+        <div>
+          <h1 className="text-4xl font-bold text-foreground mb-2">
+            Gerenciamento de Estoque
+          </h1>
+        </div>
 
         <Dialog>
           <DialogTrigger asChild>
