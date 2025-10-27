@@ -86,7 +86,7 @@ export default function EventsAdmin() {
   };
 
   return (
-    <div className="p-6">
+    <div className="flex-grow container mx-auto px-4 py-16 pt-16">
       <HeaderAdmin />
       {/* Header */}
       <div className="flex justify-between items-center mb-6 mt-12">

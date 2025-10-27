@@ -233,7 +233,7 @@ export default function MapReservation() {
   return (
     <div className="min-h-screen bg-background from-slate-50 to-slate-100 p-6 mt-16">
       <HeaderAdmin />
-      <div className="max-w-7xl mx-auto space-y-6">
+      <div className="flex-grow container mx-auto px-4 py-16 pt-16">
         <div>
           <h1 className="text-4xl font-bold text-foreground mb-2">
             Gerenciamento de Reservas

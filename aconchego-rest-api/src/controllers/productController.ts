@@ -4,7 +4,7 @@ import Product from '../models/Product';
 // GET todos produtos disponíveis
 export const getAllProducts = async (req: Request, res: Response): Promise<void> => {
   try {
-    const products = await Product.find({ inStock: true }); // filtra apenas produtos em stock
+    const products = await Product.find({ available: true }); // filtra apenas produtos em stock
     res.json(products);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching products', error });

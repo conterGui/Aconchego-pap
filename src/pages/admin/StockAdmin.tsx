@@ -92,13 +92,15 @@ export default function StorkAdmin() {
     : products;
 
   return (
-    <div className="p-6 space-y-10">
+    <div className="flex-grow container mx-auto px-4 py-16 pt-16">
       <HeaderAdmin />
 
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <h1 className="text-4xl font-bold text-foreground mb-2">
-          Gerenciamento de Estoque
-        </h1>
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 mt-12">
+        <div>
+          <h1 className="text-4xl font-bold text-foreground mb-2">
+            Gerenciamento de Menu
+          </h1>
+        </div>
 
         <Dialog>
           <DialogTrigger asChild>
