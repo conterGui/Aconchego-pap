@@ -134,7 +134,7 @@ const Loja = () => {
                 <Card
                   key={product.id}
                   className={`group hover:shadow-elegant transition-all duration-300 ${
-                    !product.inStock ? "opacity-75" : ""
+                    !product.available ? "opacity-75" : ""
                   }`}
                 >
                   <CardHeader>
@@ -192,13 +192,13 @@ const Loja = () => {
 
                       <Button
                         className={`${
-                          product.inStock
+                          product.available
                             ? "bg-gradient-gold text-primary shadow-gold hover:shadow-elegant"
                             : "bg-muted text-muted-foreground cursor-not-allowed"
                         }`}
-                        disabled={!product.inStock}
+                        disabled={!product.available}
                         onClick={() =>
-                          product.inStock &&
+                          product.available &&
                           addItem({
                             id: product.id,
                             name: product.name,
@@ -208,7 +208,7 @@ const Loja = () => {
                           })
                         }
                       >
-                        {product.inStock ? (
+                        {product.available ? (
                           <>
                             <ShoppingCart className="h-4 w-4 mr-2" />
                             Comprar

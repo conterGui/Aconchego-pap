@@ -37,7 +37,7 @@ export const createProduct = async (req: Request, res: Response): Promise<void> 
       weight: req.body.weight,
       origin: req.body.origin,
       type: req.body.type,
-      inStock: req.body.inStock ?? true,
+      available: req.body.available ?? true,
     });
 
     await product.save();
@@ -61,7 +61,7 @@ export const updateProduct = async (req: Request, res: Response): Promise<void> 
         weight: req.body.weight,
         origin: req.body.origin,
         type: req.body.type,
-        inStock: req.body.inStock,
+        available: req.body.available,
       },
       { new: true, runValidators: true }
     );

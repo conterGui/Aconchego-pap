@@ -7,7 +7,7 @@ export type Product = {
   type: string;
   origin: string;
   description: string;
-  inStock: boolean;
+  available: boolean;
   image?: string;
 };
 
@@ -15,26 +15,26 @@ export const products: Product[] = [
   {
     id: "68f6416d04a22178995df67c",
     image: "/products/JazzEspecial.png",
-    name: "Produtex",
-    price: 35.5,
+    name: "Blend Jazz Especial",
+    price: 12.5,
     weight: "250g",
     roast: "medio",
     type: "grao",
     origin: "Brasil/Colômbia",
     description: "Blend exclusivo da casa com notas de chocolate e caramelo",
-    inStock: true,
+    available: true,
   },
   {
     id: "2",
     image: "/products/ExpressoForte.png",
-    name: "Espresso Forte",
+    name: "Expresso Forte",
     price: 18.0,
     weight: "500g",
     roast: "escuro",
     type: "moido",
     origin: "Itália",
-    description: "Moagem fina para espresso perfeito, sabor intenso",
-    inStock: true,
+    description: "Moagem fina para expresso perfeito, sabor intenso",
+    available: true,
   },
   {
     id: "3",
@@ -46,7 +46,7 @@ export const products: Product[] = [
     type: "grao",
     origin: "São Paulo - Brasil",
     description: "Café doce e suave, ideal para métodos filtrados",
-    inStock: true,
+    available: true,
   },
   {
     id: "4",
@@ -58,7 +58,7 @@ export const products: Product[] = [
     type: "grao",
     origin: "Huila - Colômbia",
     description: "Acidez equilibrada com notas frutadas",
-    inStock: true,
+    available: true,
   },
   {
     id: "5",
@@ -70,7 +70,7 @@ export const products: Product[] = [
     type: "moido",
     origin: "Etiópia",
     description: "Café floral com notas cítricas, moído para V60",
-    inStock: true,
+    available: true,
   },
   {
     id: "6",
@@ -82,6 +82,6 @@ export const products: Product[] = [
     type: "grao",
     origin: "Blend Internacional",
     description: "Torra francesa tradicional, corpo encorpado",
-    inStock: true,
+    available: true,
   },
 ];

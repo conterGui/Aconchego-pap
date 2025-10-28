@@ -33,6 +33,8 @@ export default function StorkAdmin() {
   const [products, setProducts] = useState<any[]>([]);
   const [editingProduct, setEditingProduct] = useState<any | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [openAddDialog, setOpenAddDialog] = useState(false);
+  const [openEditDialog, setOpenEditDialog] = useState(false);
 
   // ✅ Buscar produtos do backend
   useEffect(() => {
@@ -102,9 +104,12 @@ export default function StorkAdmin() {
           </h1>
         </div>
 
-        <Dialog>
+        <Dialog open={openAddDialog} onOpenChange={setOpenAddDialog}>
           <DialogTrigger asChild>
-            <Button className="flex items-center gap-2">
+            <Button
+              className="flex items-center gap-2"
+              onClick={() => setOpenAddDialog(true)}
+            >
               <Plus className="w-4 h-4" />
               Adicionar Produto
             </Button>
@@ -113,7 +118,12 @@ export default function StorkAdmin() {
             <DialogHeader>
               <DialogTitle>Adicionar Novo Produto</DialogTitle>
             </DialogHeader>
-            <ProductForm onSave={handleSave} />
+            <ProductForm
+              onSave={(data) => {
+                handleSave(data);
+                setOpenAddDialog(false); // 🔹 fecha após salvar
+              }}
+            />
           </DialogContent>
         </Dialog>
       </div>
@@ -167,7 +177,7 @@ export default function StorkAdmin() {
                   <span className="font-semibold text-base">
                     € {product.price.toFixed(2)}
                   </span>
-                  {product.inStock ? (
+                  {product.available ? (
                     <Badge className="bg-green-500">Em stock</Badge>
                   ) : (
                     <Badge variant="destructive">Esgotado</Badge>
@@ -175,11 +185,17 @@ export default function StorkAdmin() {
                 </div>
 
                 <div className="flex justify-end gap-2 pt-3">
-                  <Dialog>
+                  <Dialog
+                    open={openEditDialog}
+                    onOpenChange={setOpenEditDialog}
+                  >
                     <DialogTrigger asChild>
                       <Button
                         variant="outline"
-                        onClick={() => setEditingProduct(product)}
+                        onClick={() => {
+                          setEditingProduct(product);
+                          setOpenEditDialog(true);
+                        }}
                       >
                         Editar
                       </Button>
@@ -188,7 +204,13 @@ export default function StorkAdmin() {
                       <DialogHeader>
                         <DialogTitle>Editar Produto</DialogTitle>
                       </DialogHeader>
-                      <ProductForm initialData={product} onSave={handleSave} />
+                      <ProductForm
+                        initialData={product}
+                        onSave={(data) => {
+                          handleSave(data);
+                          setOpenEditDialog(false); // 🔹 fecha após salvar
+                        }}
+                      />
                     </DialogContent>
                   </Dialog>
 
@@ -230,7 +252,7 @@ function ProductForm({ initialData, onSave }: ProductFormProps) {
       type: "grao",
       origin: "",
       description: "",
-      inStock: true,
+      available: true,
       image: "",
     }
   );
@@ -284,7 +306,6 @@ function ProductForm({ initialData, onSave }: ProductFormProps) {
           <Label>Preço (€)</Label>
           <Input
             type="number"
-            step="0.1"
             value={formData.price}
             onChange={(e) =>
               handleChange("price", parseFloat(e.target.value) || 0)
@@ -359,8 +380,8 @@ function ProductForm({ initialData, onSave }: ProductFormProps) {
       <div className="flex items-center justify-between border-t pt-4">
         <Label>Disponível em Stock</Label>
         <Switch
-          checked={formData.inStock}
-          onCheckedChange={(checked) => handleChange("inStock", checked)}
+          checked={formData.available}
+          onCheckedChange={(checked) => handleChange("available", checked)}
         />
       </div>
 
